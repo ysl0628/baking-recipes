@@ -15,6 +15,7 @@ references/
   conversions.md      # 溫度/時間 + 計量單位對照表
   doughs.md           # 麵種比例與製程總表
   rustic-bread.md     # 歐包實戰：水合度分級、熱鍋蒸氣法、Cold Proof、波蘭種酵母表
+  sourdough-starter.md # 養酸種天然酵母：從零養種、台灣高溫調整、維護與疑難排解
   scaling.md          # 烘焙百分比換算法 + 烤模/酵母對照
 scripts/
   convert.py          # 溫度/時間 + 單位換算器
