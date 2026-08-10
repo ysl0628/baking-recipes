@@ -15,7 +15,13 @@ Renee 的個人烘焙助手，專長是麵包。核心能力有四塊，外加�
 - 「食譜寫 2 茶匙酵母是幾克？」/「1 湯匙奶油多少？」→ 計量換算（§2）
 - 「湯種怎麼配？」「波蘭種要放多少酵母？」「老麵和中種差在哪？」→ 麵種比例與製程（§3）
 - 「歐包怎麼做才會挺？」「想要大氣孔」「氣炸鍋烤歐包中心不熟」「冷藏發酵怎麼排」→ 歐包實戰（§3.5）
-- 「酸種怎麼養？」「starter 沒動靜/有怪味」「冷藏的種怎麼喚醒」「棄種怎麼辦」→ 養酸種天然酵母（§3.6）
+- 「酸種怎麼養？」「starter 沒動靜/有怪味」「冷藏的種怎麼喚醒」「棄種怎麼辦」「1:5:5 要餵多少」→ 養酸種天然酵母（§3.6）
+- 「這食譜總水合幾 %？」「想做 69% 該加多少水？」→ 總水合計算（§3.5 腳本）
+- 「明早八點想出爐，幾點要開始？」「室溫 32 度要發多久/酵母放多少？」「水溫要幾度？」→ 發酵排程與溫度管理（§3.7）
+- 「發好了沒怎麼判斷？」「戳洞測試」→ 發酵判斷（§3.7 → fermentation-guide.md）
+- 「怎麼滾圓/收口？」「整形一直黏手站不住」→ 整型指南（§3.5 → shaping.md）
+- 「麵包烤出來扁/組織細密/中心沒熟/割線亂爆，哪裡錯了？」→ 失敗症狀對照（§6）
+- 「換這牌麵粉水要不要調？」「歐包用什麼粉？」→ 麵粉筆記（§6）
 - 「這個 500g 麵粉的食譜我只想做 150g」/「幫我把份量加倍」→ 烘焙百分比份量換算（§4）
 - 「我之前那個佛卡夏 / 湯種手撕包食譜」→ 從 Notion 食譜庫撈（§5）
 
@@ -65,12 +71,45 @@ Renee 實戰驗證過的歐包知識，完整內容在 `references/rustic-bread.
 - **中心 96～98°C 才出爐**；卡在 88°C 就後段降溫（170～180°C＋蓋鋁箔）慢烤。
 - **Cold Proof vs Cold Bulk** 的差異與陷阱、**波蘭種酵母依時間反推表**（過夜只要 0.1～0.2%）都在參考檔內。
 
+水合度計算不要手算，用腳本（正算＋反推都有，含麵種）：
+
+```bash
+python3 scripts/hydration.py calc --flour 300 --water 175 --preferment 200 --pre-hydration 100
+python3 scripts/hydration.py target --hydration 69 --flour 300 --preferment 200 --pre-hydration 100
+```
+
+整形手法（預整形、boule 收緊、高水合對策、藤籃防黏、滾圓/擀捲）看 `references/shaping.md`。
+
 ## §3.6 養酸種天然酵母（Sourdough Starter）
 
 從零養種（7～10 天流程）、台灣高溫調整、日常維護（室溫/冷藏兩種節奏）、levain 建立、棄種用途、疑難排解（hooch、過酸、發霉、喚醒），完整內容在 `references/sourdough-starter.md`。
 
 - 目前是通行流程整理版；檔末有【Renee 實測筆記】區，她的實際記錄補進去後**以實測區為準**。
 - 「用養好的酸種做麵包」（levain 佔比、發酵排程）看 `doughs.md` §6，不在這份。
+
+餵養量與到顛峰時間用腳本算（含台灣高溫的時間修正）：
+
+```bash
+python3 scripts/starter_feed.py --keep 30 --ratio 1:5:5 --temp 32
+python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留種量
+```
+
+## §3.7 發酵排程與溫度管理
+
+- **排程倒推**：說好幾點出爐，倒推整條時間軸（波蘭種 → autolyse → 摺疊 → 冷藏 → 預熱 → 進爐）：
+  ```bash
+  python3 scripts/ferment.py schedule --at "08:00"                  # cold-proof 歐包（預設）
+  python3 scripts/ferment.py schedule --at "18:00" --style same-day # 直接法當天完成
+  ```
+- **溫度×時間×酵母換算**（室溫和食譜不同時怎麼調；約每 ±8°C 時間減半/加倍）：
+  ```bash
+  python3 scripts/ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3
+  ```
+- **DDT 麵團溫度**：反推攪拌該用幾度的水（台灣夏天控溫關鍵；歐包目標 24～26°C）：
+  ```bash
+  python3 scripts/ddt.py --target 25 --room 32          # 加 --mixer 用攪拌機；--preferment-temp 有麵種時
+  ```
+- 時間都只是鬧鐘——**發好了沒看狀態**（1.8 倍怎麼抓、戳洞測試、過發 vs 不足、冷藏麵團判斷、麵種成熟判斷）看 `references/fermentation-guide.md`。
 
 ## §4 食譜份量換算（烘焙百分比）
 
@@ -112,3 +151,8 @@ python3 scripts/scale_recipe.py rescale --factor 0.5 \
 除了 Notion 食譜，Renee 已能做 Carol《麵包實驗室》整本的品項（吐司、餐包、甜麵包、歐式/鄉村/法國、菠蘿可頌、天然酵母系列、免揉、貝果披薩、麵包乾、各式餡料）。完整清單（含品類、技法標籤、書頁碼）在 `references/repertoire-carol.md`。推薦或討論時可從這份清單挑，或用書頁碼對照做法。
 
 > Renee 的個人偏好與踩雷筆記（會影響建議）：氣炸鍋做麵包**務必預熱**；佛卡夏用油防黏、絕不加麵粉、分塊一刀切到底；小數值酵母用「酵母水稀釋法」（10g 酵母＋100g 水，每 10g 酵母水＝1g 酵母，總水量記得扣掉）。
+
+## §6 疑難排解與材料資料庫
+
+- **做壞了先查** `references/troubleshooting.md`：症狀（扁塌、組織細密、中心不熟、割線亂爆、發不起來…）→ 原因 → 對策，按「攪拌 / 發酵 / 整形 / 烘烤 / 剖面」分五區，Renee 實測驗證項標 ✅。
+- **換麵粉先查** `references/flour-notes.md`：台灣常見品牌蛋白質與吸水特性、換粉守則（新粉水先 −3% 再後加水補回）。檔末【Renee 實測】表待補，補上後**以實測為準**。
