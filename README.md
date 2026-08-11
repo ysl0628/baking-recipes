@@ -51,5 +51,30 @@ python3 scripts/ddt.py --target 25 --room 32
 
 ## 食譜庫
 現有食譜存在 Notion 🍽️ Recipe 資料庫，透過 Notion MCP 即時撈取（見 SKILL.md §5）。
+（僅在支援 MCP 且已連接 Notion 的環境可用；其他環境把食譜貼上即可。）
 
-已透過 `~/.claude/skills/baking-recipes` 符號連結啟用。
+## 安裝方式
+
+本 repo 為 [Agent Skills](https://agentskills.io) 開放格式（`SKILL.md` ＋ `references/` ＋ `scripts/`），
+支援 Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot、Windsurf 等 agent 工具。
+
+**方法一：skills CLI**
+```bash
+npx skills add ysl0628/baking-recipes
+```
+
+**方法二：git clone 到工具的 skills 目錄**
+```bash
+# Claude Code（全域）
+git clone https://github.com/ysl0628/baking-recipes ~/.claude/skills/baking-recipes
+# 其他工具：clone 後放到該工具的 skills/ 目錄（各工具路徑見其文件）
+```
+
+**方法三：claude.ai 網頁/App**
+整個 repo 壓成 zip，Settings → Capabilities → Skills 上傳。
+
+**聊天產品（ChatGPT Custom GPT / Gemini Gems）**：不吃 skill 格式，
+改用單檔 `baking-recipes-GPT.md`（所有表格公式內嵌、可手算的自足版）當 Knowledge。
+
+> 腳本為零依賴 Python 標準庫，任何有 python3 的環境皆可執行；沒有執行環境時，
+> 所有計算的公式與對照表都在 references/ 與 GPT 版內，可手算。
