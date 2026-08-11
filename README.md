@@ -44,6 +44,7 @@ python3 scripts/hydration.py calc --flour 300 --water 175 --preferment 200 --pre
 python3 scripts/hydration.py target --hydration 69 --flour 300 --preferment 200 --pre-hydration 100
 python3 scripts/ferment.py schedule --at "08:00"                    # 倒推 cold-proof 歐包時間軸
 python3 scripts/ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3
+python3 scripts/ferment.py poolish --flour 100 --hours 14 --temp 30   # 波蘭種酵母克數
 python3 scripts/starter_feed.py --keep 30 --ratio 1:5:5 --temp 32
 python3 scripts/ddt.py --target 25 --room 32
 ```

@@ -107,6 +107,10 @@ python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留�
   ```bash
   python3 scripts/ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3
   ```
+- **波蘭種酵母量**（發酵時數＋室溫 → 克數，含酵母水稀釋法）：
+  ```bash
+  python3 scripts/ferment.py poolish --flour 100 --hours 14 --temp 30
+  ```
 - **DDT 麵團溫度**：反推攪拌該用幾度的水（台灣夏天控溫關鍵；歐包目標 24～26°C）：
   ```bash
   python3 scripts/ddt.py --target 25 --room 32          # 加 --mixer 用攪拌機；--preferment-temp 有麵種時
