@@ -82,7 +82,9 @@ python3 scripts/hydration.py target --hydration 69 --flour 300 --preferment 200 
 
 ## §3.6 養酸種天然酵母（Sourdough Starter）
 
-從零養種（7～10 天流程）、台灣高溫調整、日常維護（室溫/冷藏兩種節奏）、levain 建立、棄種用途、疑難排解（hooch、過酸、發霉、喚醒），完整內容在 `references/sourdough-starter.md`。
+從零養種（7～10 天流程）、台灣高溫調整、上班族排程、日常維護（室溫/冷藏兩種節奏）、levain 建立、棄種用途、疑難排解（hooch、過酸、發霉、喚醒），完整內容在 `references/sourdough-starter.md`。
+
+**協作模式**：Renee 會先說目標烤麵包日（→照該檔 §7.1 倒推起種/喚醒日），過程中回報每次攪拌/餵養（時間、照片、氣味描述、溫度、在家時段）——收到回報就照該檔 **§7 判讀協議**跑：安全檢查 → 定位 → 氣味×照片×漲幅交叉 → 溫度修正 → 給下一步（必須落在她在家的時段）→ 有價值的觀察滾動記入【Renee 實測筆記】。**綜合判斷，不單看任一指標**。
 
 - 目前是通行流程整理版；檔末有【Renee 實測筆記】區，她的實際記錄補進去後**以實測區為準**。
 - 「用養好的酸種做麵包」（levain 佔比、發酵排程）看 `doughs.md` §6，不在這份。
@@ -104,6 +106,10 @@ python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留�
 - **溫度×時間×酵母換算**（室溫和食譜不同時怎麼調；約每 ±8°C 時間減半/加倍）：
   ```bash
   python3 scripts/ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3
+  ```
+- **波蘭種酵母量**（發酵時數＋室溫 → 克數，含酵母水稀釋法）：
+  ```bash
+  python3 scripts/ferment.py poolish --flour 100 --hours 14 --temp 30
   ```
 - **DDT 麵團溫度**：反推攪拌該用幾度的水（台灣夏天控溫關鍵；歐包目標 24～26°C）：
   ```bash

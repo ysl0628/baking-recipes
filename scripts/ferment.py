@@ -12,6 +12,9 @@
   python3 ferment.py adjust --hours 2 --from-temp 25 --to-temp 32
   python3 ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3
 
+  # C. 波蘭種配方：發酵時數＋室溫 → 酵母克數（rustic-bread.md §7 反比表＋溫度修正）
+  python3 ferment.py poolish --flour 100 --hours 14 --temp 30
+
 經驗法則：溫度每 ±8°C，發酵時間約減半/加倍（近似值，最終看狀態，
 見 references/fermentation-guide.md）。
 """
@@ -78,7 +81,8 @@ def cmd_schedule(args):
         poolish = autolyse - timedelta(hours=args.poolish_hours)
         steps = [
             (poolish, "攪波蘭種",
-             f"室溫過夜 {args.poolish_hours:g}h → 酵母佔波蘭種粉重 0.1～0.2%（rustic-bread.md §7）；冷藏一天亦可"),
+             f"室溫過夜 {args.poolish_hours:g}h；酵母克數用 `ferment.py poolish --flour 粉量 "
+             f"--hours {args.poolish_hours:g} --temp 室溫` 算；冷藏一天亦可"),
             (autolyse, "Autolyse：主麵團粉＋冰水拌到無粉粒", "靜置 30 分（台灣高溫 30 分剛好）"),
             (bulk, "加波蘭種＋鹽成團，開始 Bulk", "每 30 分摺疊一次 ×3，續發到約 1.8 倍"),
             (preshape, "預整形＋鬆弛", "刮板輕收鬆散圓、不排氣，鬆弛 20～30 分"),
@@ -111,6 +115,36 @@ def cmd_schedule(args):
         print("【直接法當天排程】（餐包/吐司類基準）\n")
         print_timeline(steps, out)
         print("\n※ 台灣夏天室溫 30°C+ 時 bulk 會更快，提早檢查（時間 ×0.6～0.7 就先看）。")
+
+
+# 波蘭種酵母反比表（rustic-bread.md §7；速發酵母 IDY，佔波蘭種粉重%，基準約 20°C）
+POOLISH_TABLE = [(2, 2.5), (3, 1.5), (8, 0.5), (12, 0.2), (16, 0.1)]
+
+
+def cmd_poolish(args):
+    import math
+    h = args.hours
+    t = POOLISH_TABLE
+    if h < t[0][0] or h > t[-1][0]:
+        print(f"發酵時數建議在 {t[0][0]}～{t[-1][0]} 小時之間（你給的 {h:g}h 超出表格範圍）")
+        sys.exit(1)
+    # 對數空間內插（酵母量隨時間近似反比，線性內插會高估）
+    for (h1, p1), (h2, p2) in zip(t, t[1:]):
+        if h <= h2:
+            k = (math.log(h) - math.log(h1)) / (math.log(h2) - math.log(h1))
+            pct20 = math.exp(math.log(p1) + k * (math.log(p2) - math.log(p1)))
+            break
+    factor = 2 ** ((20 - args.temp) / 8.0)   # 比 20°C 熱 → 酵母要更少
+    pct = pct20 * factor
+    grams = args.flour * pct / 100
+    print(f"波蘭種：粉 {args.flour:g} g ＋ 水 {args.flour:g} g（100% 水合）")
+    print(f"室溫 {args.temp:g}°C 發 {h:g} 小時 → 速發酵母 {pct:.2f}%（20°C 基準 {pct20:.2f}% × 溫度倍率 {factor:.2f}）")
+    print(f"\n→ 酵母 {grams:.2f} g")
+    if grams < 1:
+        print(f"   ※ <1g 用酵母水稀釋法：10g 酵母＋100g 水攪勻，取 {grams * 10:.1f} g 酵母水（主麵團總水量記得扣掉）")
+    print("\n完成判斷：表面滿布氣泡、中心微微塌陷、拉開有絲、微酸酒香（fermentation-guide.md §4）。")
+    print("※ 改冷藏一天亦可（成功基準流程作法）：酵母用 1g/100g 粉，冷藏 24h（rustic-bread.md §3）。")
+    print("※ 新鮮酵母活性約速發的 1/3，用量 ×3。")
 
 
 def cmd_adjust(args):
@@ -153,6 +187,11 @@ def main():
     b.add_argument("--to-temp", type=float, required=True, help="實際室溫 °C")
     b.add_argument("--yeast", type=float, default=0, help="原酵母克數（給了就算等效酵母量）")
 
+    c = sub.add_parser("poolish", help="波蘭種酵母量：時數＋室溫 → 克數")
+    c.add_argument("--flour", type=float, required=True, help="波蘭種粉量 (g)，水量同粉量")
+    c.add_argument("--hours", type=float, required=True, help="室溫發酵時數（2~16）")
+    c.add_argument("--temp", type=float, default=20, help="室溫 °C（預設 20，表格基準）")
+
     args = p.parse_args()
     if args.cmd == "schedule":
         if args.style == "same-day" and args.bulk_hours == 2.5:
@@ -160,6 +199,8 @@ def main():
         if args.style == "same-day" and args.bake_minutes == 40:
             args.bake_minutes = 25
         cmd_schedule(args)
+    elif args.cmd == "poolish":
+        cmd_poolish(args)
     else:
         cmd_adjust(args)
 
