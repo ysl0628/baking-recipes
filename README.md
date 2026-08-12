@@ -21,10 +21,13 @@ references/
   rustic-bread.md     # 歐包實戰：水合度分級、熱鍋蒸氣法、Cold Proof、波蘭種酵母表
   sourdough-starter.md # 養酸種天然酵母：從零養種、台灣高溫調整、維護與疑難排解
   scaling.md          # 烘焙百分比換算法 + 烤模/酵母對照
+  mixing.md           # 攪拌與出筋：階段表、薄膜測試、攪拌機 vs 手揉、照片判讀
   fermentation-guide.md # 發酵判斷：1.8 倍怎麼抓、戳洞測試、過發 vs 不足、麵種成熟
   shaping.md          # 整型指南：預整形、boule/batard、高水合對策、滾圓/擀捲
-  troubleshooting.md  # 失敗症狀對照表（攪拌/發酵/整形/烘烤/剖面 五區）
-  flour-notes.md      # 台灣麵粉品牌筆記（蛋白質、吸水性、換粉守則）
+  troubleshooting.md  # 失敗症狀對照表（含出爐照片檢查順序）
+  flour-notes.md      # 台灣麵粉品牌筆記（蛋白質、吸水性、換粉守則、儲存）
+  experiment-log.md   # 實驗記錄模板（原版→過渡版→總整理）
+  equipment.md        # 設備檔案（氣炸烤箱溫差/熱點實測骨架）
 scripts/
   convert.py          # 溫度/時間 + 單位換算器
   scale_recipe.py     # 烘焙百分比份量縮放
