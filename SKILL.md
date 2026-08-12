@@ -121,6 +121,7 @@ python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留�
   ```
 - 時間都只是鬧鐘——**發好了沒看狀態**（1.8 倍怎麼抓、戳洞測試、過發 vs 不足、冷藏麵團判斷、麵種成熟判斷）看 `references/fermentation-guide.md`。
 - **使用者傳照片來時，先認階段、再選判讀依據**（都判不準就請對方補拍或補述，不硬猜）：
+  - **攪拌／出筋**（成團、薄膜、斷筋） → `mixing.md`（含出筋階段表、薄膜測試、攪拌機 vs 手揉）
   - 酵種／麵種／主麵團**發酵狀態** → `fermentation-guide.md` §5（通用照片協議：SOP、視覺特徵表、檢查順序、回報範本）
   - **整形**（預整形、最終整形、入籃） → `shaping.md` §6 整形照片判讀
   - **烘烤中**（開蓋時機、上色、oven spring） → `rustic-bread.md` §4 烤程中照片判讀
