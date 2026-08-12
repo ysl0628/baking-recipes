@@ -78,6 +78,10 @@ python3 scripts/hydration.py calc --flour 300 --water 175 --preferment 200 --pre
 python3 scripts/hydration.py target --hydration 69 --flour 300 --preferment 200 --pre-hydration 100
 ```
 
+**食譜健檢規則**：拿到任何食譜（包括 Notion 裡自己的）先用上面腳本**驗算宣稱的水合%**——
+食譜寫的數字和材料表不一致時**以計算為準**並告知 Renee（實例：某食譜宣稱 72% 但材料加總是 76.6～78.1%，
+差一級就是安全區與高風險區的差別）。
+
 整形手法（預整形、boule 收緊、高水合對策、藤籃防黏、滾圓/擀捲）看 `references/shaping.md`。
 
 ## §3.6 養酸種天然酵母（Sourdough Starter）
