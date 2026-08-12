@@ -120,6 +120,7 @@ python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留�
   python3 scripts/ddt.py --target 25 --room 32          # 加 --mixer 用攪拌機；--preferment-temp 有麵種時
   ```
 - 時間都只是鬧鐘——**發好了沒看狀態**（1.8 倍怎麼抓、戳洞測試、過發 vs 不足、冷藏麵團判斷、麵種成熟判斷）看 `references/fermentation-guide.md`。
+- **Renee 傳任何發酵照片來**（酵種/波蘭種/主麵團）→ 照 `fermentation-guide.md` §5 通用照片協議判讀（SOP、視覺特徵表、檢查順序、回報範本都在那節）。
 
 ## §4 食譜份量換算（烘焙百分比）
 
