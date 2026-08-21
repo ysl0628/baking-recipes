@@ -73,6 +73,12 @@
 | ✅ | **Domed top ≠ Peak**：圓頂隆起時還在上升，**表面轉平才是 peak** | `sourdough-starter.md` §1、`fermentation-guide.md` §5 | 本檔 `fermentation-guide.md` §5 原有判準（「圓頂剛轉平、質地如慕斯」），與多家教學一致<br>關鍵字：`sourdough starter peak domed top vs flattened surface` |
 | ✅ | **Float test 假合格的根本原因：過了 peak 一樣會浮**（不限硬種）——它測含氣量，而含氣量在 peak 前後都高，**分不出上升段與下降段** | `sourdough-starter.md` §1 | 同上；補強原有條目 |
 | ⚠️ | **餵養粉的蛋白質影響顛峰穩定度**：偏低（11～11.5%）的種提早到頂又**撐不住顛峰**，窗口窄容易錯過 | `sourdough-starter.md` §1 | 《Secrets of Open Crumb / The Sourdough Starter Expert》單一來源。⚠️ 同書「14%+ 有害」那條已駁回（見下），此條僅取「顛峰穩定度」的方向 |
+| ✅ | **冷藏會讓嗜冷乳酸菌（Weissella、Leuconostoc）變優勢種**，它們**比正常 type-I 異型發酵菌更不耐酸** → 主麵團階段發酵力更弱 | `sourdough-starter.md` §3 | craft 雜誌專文；**與本檔已驗證的 PMC 文獻獨立吻合**（5°C 由 Leuconostoc 主導、25°C 換 Lactobacillus，見上方「機制」列） |
+| ⚠️ | **冷藏的細胞族群代價（具體數字）**：1 週 → type-I 菌剩約 **1%**；1 個月 → **0.1%**；3 個月 → **酵母完全消失**。酵母受創最重，餵回原數量所需次數比多數人以為的多 | `sourdough-starter.md` §3 | craft 雜誌專文（引述研究但未給文獻名）。**數字未找到獨立來源**；方向（冷藏減少族群、酵母受創最重、需每週餵維持）多方一致 → 數字當量級參考，方向可信<br>關鍵字：`sourdough starter refrigeration yeast population decline weekly refresh` |
+| ⚠️ | **新種太早冷藏＝「密實發黏麵包」的頭號成因**；建議**數個月每日室溫餵養後再開始用冷藏** | `sourdough-starter.md` §3、§2 | 同上，單一來源的實務建議。⚠️ 與台灣夏天高溫有取捨——本檔的處理是「先用拉大比例／找涼處／加鹽減速，撐不住才用白天冰晚上養」 |
+| ✅ | **進冷藏前要先室溫發酵 4～12 小時把細胞數養起來**（冷藏中生長完全停止，冷藏只保存不增殖）。**用種前連餵 3～5 次**（三次好、五次理想）建立最大族群與代謝能力 | `sourdough-starter.md` §3、§7.1 | 同上；「每週從冰箱取出餵一次以維持族群（尤其酵母）」有多來源支持 |
+| ✅ | **冷藏遠優於冷凍或乾燥**：後兩者立刻殺掉酵母並永久改變菌相，不如重養一罐 | `sourdough-starter.md` §3 | craft 雜誌專文 |
+| ❌ | ~~「冷藏種可以不回溫、直接餵完就放回冰箱」（純維持用捷徑）~~ | — | **已移除（2026-08）**：違反「進冰箱前需室溫 4～12h 建立細胞數」——冷藏中生長完全停止，這個捷徑會讓族群持續衰減。原本本檔引 CC 說法列為捷徑，現撤下 |
 | ⚠️ | **比例階梯當強度指標**：間隔內漲了又落＝該加碼，1:1:1 →…→ 1:6:6，小步遞增 | `sourdough-starter.md` §1 | 《Secrets of Open Crumb / The Sourdough Starter Expert》。單一來源，但邏輯自洽（提早耗盡食物＝該多餵）且與台式兩週法的漸進拉大一致 → **採納但標明** |
 | ⚠️ | **攪拌隨稠度演進為迷你 stretch and fold** | `sourdough-starter.md` §1 | 同上，單一來源；低風險操作建議 |
 | ❌ | ~~「蛋白質 14%+ 會讓菌消化不掉、種變弱發黏」~~ | — | **已駁回**。主流資料把 12～14% 全列為適用區，高蛋白粉甚至因養分與保氣力較好被推薦；**原作者自陳 "at least that was my observation"**。→ 不要把「14% 有害」寫回 skill |
