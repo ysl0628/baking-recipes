@@ -124,11 +124,22 @@ python3 scripts/starter_feed.py --target-total 330 --ratio 1:2:2   # 反推留�
 
 ## §3.7 發酵排程與溫度管理
 
-- **排程倒推**：說好幾點出爐，倒推整條時間軸（波蘭種 → autolyse → 摺疊 → 冷藏 → 預熱 → 進爐）：
+- **排程倒推（商業酵母）**：說好幾點出爐，倒推整條時間軸（波蘭種 → autolyse → 摺疊 → 冷藏 → 預熱 → 進爐）：
   ```bash
   python3 scripts/ferment.py schedule --at "08:00"                  # cold-proof 歐包（預設）
   python3 scripts/ferment.py schedule --at "18:00" --style same-day # 直接法當天完成
   ```
+- **排程倒推（酸種）**：⚠️ **酸種走這支，不要用上面那支**——bulk 終點是麵團溫度的函數
+  （雙因子法），與商業酵母的「1.8～2 倍」完全不同。**可輸出 .ics 行事曆**：
+  ```bash
+  python3 scripts/sourdough_schedule.py --bake-at "2026-08-25 10:00" --dough-temp 26
+  python3 scripts/sourdough_schedule.py --bake-at "10:00" --dough-temp 24 \
+      --mode two-stage --cold-hours 8 --cold-hours-2 10      # 兩段冷藏（風味較佳）
+  python3 scripts/sourdough_schedule.py --bake-at "18:00" --dough-temp 27 --mode same-day
+  python3 scripts/sourdough_schedule.py --bake-at "10:00" --dough-temp 26 --ics plan.ics
+  ```
+  🌡️ `--dough-temp` 是**麵團溫度**，不是室溫、更不是氣象預報氣溫——**必問使用者，不准猜**。
+  前置不夠時腳本會直接算出「最早能出爐的時間」。
 - **溫度×時間×酵母換算**（室溫和食譜不同時怎麼調；約每 ±8°C 時間減半/加倍）：
   ```bash
   python3 scripts/ferment.py adjust --hours 2 --from-temp 25 --to-temp 32 --yeast 3

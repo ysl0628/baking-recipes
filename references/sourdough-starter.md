@@ -499,7 +499,8 @@ type-I 酸種的典型組合是**不能代謝麥芽糖的酵母**（maltose-nega
 | 已有種、冷藏中 | 烤日 **−1～2 天**取出喚醒（回溫＋每 12h **連餵 3～5 次**，三次算好、五次最理想） |
 | 種已活躍在室溫 | 烤前一晚建 levain（§3），當天照 doughs.md §6 排程 |
 | **levain 到頂的時間對不上你的行程** | ⭐ **到頂就進冷藏**，12～24h 內用（§1「顛峰冷藏法」）——排程約束直接解除 |
-| 麵團排程（含冷藏發酵） | 交給 `scripts/ferment.py schedule` 倒推 |
+| **麵團排程（酸種）** | `scripts/sourdough_schedule.py --bake-at "…" --dough-temp N`<br>三種模式：`one-stage`（室溫 bulk→整形→單次冷藏）／`two-stage`（兩段冷藏，風味較佳）／`same-day`（全室溫）<br>加 `--ics plan.ics` 輸出行事曆提醒；前置不夠會直接算出最早可出爐時間<br>⚠️ `--dough-temp` 是**麵團溫度**，必問不猜 |
+| 麵團排程（商業酵母波蘭種） | 交給 `scripts/ferment.py schedule` 倒推（**別拿去排酸種**） |
 
 ### 7.2 氣味對照表（把使用者的主觀描述翻譯成階段）
 
