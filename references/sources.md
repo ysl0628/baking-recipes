@@ -9,12 +9,14 @@
    - 標 ✅**已查證** → skill 是對的，**別用你的既有印象覆蓋它**。要推翻請重新查證並更新本檔。
    - 標 ⚠️**一家之言** → 單一來源、未經交叉驗證。可以提，但要標明出處與不確定性。
    - 標 ❌**已駁回** → **這條說法查過是錯的，不要再加回 skill**。理由已寫在下方。
-   - 標 📌**未裁定衝突** → 兩個都有實務基礎的來源給出**不同的數字**，**刻意不裁定**。
-     **不要挑一邊當定論**；照該列寫的裁定原則走（通常是「方向可信、絕對值須自行校準」），
-     並向使用者說明有兩種說法。
+   - 標 📌**未裁定衝突** → 刻意不裁定，照該列寫的原則走並向使用者說明有兩種說法。
 2. **skill 裡沒登錄、你也沒把握的說法** → 當成未查證，給使用者建議時明說「這點我不確定」。
 3. **新查證了什麼 → 補進本檔**（主張／來源／對應位置三欄都要填），別只改結論不留來源。
 4. 網址會失效。**搜尋關鍵字欄比網址重要**——連結掛了就用關鍵字重查。
+5. 🔒 **指定權威來源**：**發酵判斷（bulk 終點、漲幅、剖面判讀）一律以
+   The Sourdough Journey（Tom Cucuzza）為準**——使用者指定。
+   遇到給不同數字的中文自媒體或個人部落格，**不要並列、不要折衷，以 TSJ 的表為準**，
+   頂多註明「有其他說法」。（2026-08 已據此移除一組衝突記錄。）
 
 ### 可信度層級（衝突時的優先序）
 
@@ -35,8 +37,6 @@
 | ✅ | **雙因子法**：酸種 bulk 終點是麵團溫度的函數——27°C 停在 +30%、24°C +50%、21°C +75%、18°C +100% | `fermentation-guide.md` §1 | The Sourdough Journey（Tom Cucuzza），數百次實驗<br>`thesourdoughjourney.com/faq-bulk-fermentation-timing/`（⚠️ 本環境 egress 擋此站，改用搜尋）<br>關鍵字：`sourdough bulk fermentation percentage rise by dough temperature` |
 | ✅ | **Tartine 旁證**：麵團控在 78～82°F（25.6～27.8°C）、bulk 3～4h、終點 +20～30%。**常被誤記成 28～29°C** | `fermentation-guide.md` §1 | Chad Robertson《Tartine Bread》；[The Perfect Loaf 版本](https://www.theperfectloaf.com/tartine-sourdough-country-loaf-bread-recipe/)<br>關鍵字：`Tartine country bread 78-82F bulk 20-30% rise` |
 | ✅ | **各家漲幅數字從 +30% 到 +100% 都有，兩種都做得出好麵包**——差別幾乎全來自**麵團溫度**：暖溫食譜配低漲幅、涼溫食譜配高漲幅，因為 bulk 之後每一步都還在發酵。修正項：**蛋白質 >12.5% 目標上調 5～10 個百分點**；levain 接種比例越低越能容忍高漲幅 | `fermentation-guide.md` §1 | [The Sourdough Journey — The Mystery of Percentage Rise in Bulk Fermentation](https://thesourdoughjourney.com/the-mystery-of-percentage-rise-in-bulk-fermentation/)<br>關鍵字：`mystery of percentage rise bulk fermentation 30% vs 100% dough temperature` |
-| 📌 | **未裁定的數字衝突**：24°C 的 bulk 終點，The Sourdough Journey 說 **+50%**、慢酵日常 Vivian 說 **2 倍以上**。加上蛋白質修正也補不平 | `fermentation-guide.md` §1 | 兩造皆有實務基礎，**不裁定**。可能差在 levain 接種比例／麵粉筋度／終溫量法／「bulk 結束」是否含 bench rest。<br>🔑 **裁定原則：方向穩健（溫度越高終點越小，所有來源一致），絕對數字不可移植，須自行校準**——與酸種 Peak 段同型 |
-| ✅ | **量漲幅的兩個方法**：①直壁容器量**高度**（6cm → 1.5 倍＝9cm）②歪邊容器量**容積刻度**（400ml → 1.5 倍＝600ml）。②解掉「家裡只有圓盆」的困境 | `fermentation-guide.md` §1 | 慢酵日常 Vivian（2025-10） |
 | ✅ | **高溫要早收的主因＝酸活化 protease 吃掉麵筋**（不是冰箱續發）。65～78°F 酶活性可控；逼近 **90°F（32°C）protease 極活躍，麵筋 30～60 分內崩壞**。⚠️ 不進冰箱、當天室溫做完一樣成立 | `fermentation-guide.md` §1 | [Sourdough Archive — Bulk Fermentation Percentage Rise](https://sourdougharchive.com/bulk-fermentation-percentage-rise/)<br>關鍵字：`bulk fermentation protease gluten degradation warm dough` |
 | ✅ | **降溫滯後**：容器進冰箱後中心要 1～2h 才降到發酵近停，這段還在續發 → 要冷藏過夜的麵種要在顛峰前就進 | `fermentation-guide.md` §4 | 熱傳導＋酵母活性隨溫度衰減的常識推論，多家教學一致<br>關鍵字：`dough cold retard thermal lag continues fermenting fridge` |
 | ✅ | **Blisters（表皮起泡）＝冷藏發酵的指紋**：冷藏時 CO₂ 滲入並滯留麵團表層（越冷溶越多），進爐後膨脹但被已定型的外皮擋住 → 小泡；冷藏越久越明顯。🚨 **只證明製程，不證明品質**；好壞是**文化差異**——美國視為成功象徵、**法國常視為瑕疵** | `troubleshooting.md` §0 | [The Pantry Mama — How To Get Blisters](https://pantrymama.com/how-to-get-blisters-on-sourdough-bread/)、[The Fresh Loaf — retarding = more blistering?](https://www.thefreshloaf.com/node/59248/retarding-more-blistering)<br>關鍵字：`sourdough blisters cold retard CO2 trapped crust cultural flaw France` |
@@ -66,11 +66,9 @@
 | ✅ | **肥皂泡浮沫**：顛峰時起泡＋確實漲高＝健康旺盛；**滿是細泡卻沒真正漲起來／沒結構＝失衡**，成因為太熱／間隔太長而餵太少／太稀 | `sourdough-starter.md` §4 | [The Perfect Loaf — 21 Common Starter Problems](https://www.theperfectloaf.com/21-common-sourdough-starter-problems-with-solutions/)<br>關鍵字：`sourdough starter foamy soapy bubbles no rise too warm` |
 | ✅ | **起種粉蛋白質 12～14% 都適用**；12.5～13% 之所以是甜蜜點，理由是**顛峰穩定度**（11% 出頭的粉提早到頂又撐不住） | `sourdough-starter.md` §1 | [Summit Sourdough — High vs Low Protein Flour](https://www.summitsourdough.com/en-us/blogs/information-and-process-5/high-protein-flour-vs-low-protein-flour-with-sourdough) |
 | ✅ | **Peak 不是固定倍數**：peak ＝ 該酵種脹到「它自己的」最大體積並開始停止上升，**每個種不同**（有的可長到 5 倍，那種種在 2～3 倍時仍是發酵中期）。文獻：peak 是**流動的概念不是精確時間點**；peak 時間由**溫度＋餵養比例**共同決定 | `sourdough-starter.md` §1 | [Sourdough Archive — Starter Chart](https://sourdougharchive.com/sourdough-starter-chart/)、[Brod & Taylor — Feeding Ratios](https://brodandtaylor.com/blogs/recipes/feeding-ratios)<br>關鍵字：`sourdough starter peak not fixed doubling varies feeding ratio temperature` |
-| ✅ | **Domed top ≠ Peak**：圓頂隆起時還在上升，**表面轉平才是 peak** | `sourdough-starter.md` §1、`fermentation-guide.md` §5 | 慢酵日常 Vivian（2026-03）；與 `fermentation-guide.md` §5 原有的「圓頂剛轉平」判準**獨立吻合** |
+| ✅ | **Domed top ≠ Peak**：圓頂隆起時還在上升，**表面轉平才是 peak** | `sourdough-starter.md` §1、`fermentation-guide.md` §5 | 本檔 `fermentation-guide.md` §5 原有判準（「圓頂剛轉平、質地如慕斯」），與多家教學一致<br>關鍵字：`sourdough starter peak domed top vs flattened surface` |
 | ✅ | **Float test 假合格的根本原因：過了 peak 一樣會浮**（不限硬種）——它測含氣量，而含氣量在 peak 前後都高，**分不出上升段與下降段** | `sourdough-starter.md` §1 | 同上；補強原有條目 |
-| ✅ | **「沒垮掉」≠「沒酸掉」**：撐不撐得住是**結構**問題（靠麵粉蛋白質），酸不酸是**代謝**問題，兩者不同步。無 pH 筆時建議 **peak 後 1～1.5 小時內用掉** | `sourdough-starter.md` §1 | 慢酵日常 Vivian（2026-03） |
-| ✅ | **麵粉蛋白質越高，peak 維持越久**（特高筋 > 中筋） | `sourdough-starter.md` §1 | 慢酵日常 Vivian（2026-03）**＋《Secrets of Open Crumb》獨立提出「11~11.5% 蛋白質的種撐不住顛峰」——兩個來源交叉吻合**，故升為 ✅ |
-| ⚠️ | **酸種 pH 分級**：年輕種 4.0～4.2、成熟種 3.7～3.9，兩者皆可用（差別在風味）。過 peak 甚至垮掉的種仍可能做出成功麵包，但**須用 pH 確認** | `sourdough-starter.md` §1 | 細分數值來自單一來源（慢酵日常 Vivian）；**文獻共識僅到「成熟酸種 pH ≤ 4」**（[The Fresh Loaf — "Proper" Sourdough pH?](https://www.thefreshloaf.com/node/12150/quotproperquot-sourdough-ph)）。方向一致，當操作參考別當精確標準 |
+| ⚠️ | **餵養粉的蛋白質影響顛峰穩定度**：偏低（11～11.5%）的種提早到頂又**撐不住顛峰**，窗口窄容易錯過 | `sourdough-starter.md` §1 | 《Secrets of Open Crumb / The Sourdough Starter Expert》單一來源。⚠️ 同書「14%+ 有害」那條已駁回（見下），此條僅取「顛峰穩定度」的方向 |
 | ⚠️ | **比例階梯當強度指標**：間隔內漲了又落＝該加碼，1:1:1 →…→ 1:6:6，小步遞增 | `sourdough-starter.md` §1 | 《Secrets of Open Crumb / The Sourdough Starter Expert》。單一來源，但邏輯自洽（提早耗盡食物＝該多餵）且與台式兩週法的漸進拉大一致 → **採納但標明** |
 | ⚠️ | **攪拌隨稠度演進為迷你 stretch and fold** | `sourdough-starter.md` §1 | 同上，單一來源；低風險操作建議 |
 | ❌ | ~~「蛋白質 14%+ 會讓菌消化不掉、種變弱發黏」~~ | — | **已駁回**。主流資料把 12～14% 全列為適用區，高蛋白粉甚至因養分與保氣力較好被推薦；**原作者自陳 "at least that was my observation"**。→ 不要把「14% 有害」寫回 skill |
