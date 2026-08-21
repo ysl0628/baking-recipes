@@ -33,6 +33,7 @@
 | ✅ | **Tartine 旁證**：麵團控在 78～82°F（25.6～27.8°C）、bulk 3～4h、終點 +20～30%。**常被誤記成 28～29°C** | `fermentation-guide.md` §1 | Chad Robertson《Tartine Bread》；[The Perfect Loaf 版本](https://www.theperfectloaf.com/tartine-sourdough-country-loaf-bread-recipe/)<br>關鍵字：`Tartine country bread 78-82F bulk 20-30% rise` |
 | ✅ | **高溫要早收的主因＝酸活化 protease 吃掉麵筋**（不是冰箱續發）。65～78°F 酶活性可控；逼近 **90°F（32°C）protease 極活躍，麵筋 30～60 分內崩壞**。⚠️ 不進冰箱、當天室溫做完一樣成立 | `fermentation-guide.md` §1 | [Sourdough Archive — Bulk Fermentation Percentage Rise](https://sourdougharchive.com/bulk-fermentation-percentage-rise/)<br>關鍵字：`bulk fermentation protease gluten degradation warm dough` |
 | ✅ | **降溫滯後**：容器進冰箱後中心要 1～2h 才降到發酵近停，這段還在續發 → 要冷藏過夜的麵種要在顛峰前就進 | `fermentation-guide.md` §4 | 熱傳導＋酵母活性隨溫度衰減的常識推論，多家教學一致<br>關鍵字：`dough cold retard thermal lag continues fermenting fridge` |
+| ✅ | **剖面 → 發酵程度 12 格判定表**：大氣孔常代表**發酵不足**（孤立洞穴／隧道＋旁邊密實區），不是成功；密實在過發與不足**兩端都會出現**，用形狀扁不扁分辨；過發**先垮形狀後垮組織** | `troubleshooting.md` §0 | The Sourdough Journey, "How to Read a Sourdough Crumb – Gallery" (© 2021)<br>關鍵字：`How to Read a Sourdough Crumb gallery underproofed tunneling caverns overproofed` |
 | ✅ | **全麥/裸麥麵種表面氣泡少是正常**：麩皮切筋鎖不住氣，氣泡浮到表面就破 → 改看罐壁氣泡＋漲幅＋氣味 | `fermentation-guide.md` §4 | 與麩皮切筋機制同源（見三、全穀）<br>關鍵字：`whole wheat starter fewer surface bubbles normal` |
 
 ---
