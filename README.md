@@ -1,6 +1,15 @@
 # 🍞 baking-recipes — 烘焙與麵包 Skill
 
-Renee 的個人烘焙助手（Claude Code / Claude 可用的 skill）。專長麵包。
+Renee 的個人烘焙助手。專長麵包。
+
+**三種用法**：
+| 平台 | 入口檔 |
+|---|---|
+| Claude Code / claude.ai | `SKILL.md`（frontmatter description 負責觸發） |
+| **Codex／其他讀 repo 的 agent** | **`AGENTS.md`** |
+| ChatGPT 自訂 GPT（單檔、不讀 repo） | `baking-recipes-GPT.md` |
+
+三者共用同一份 `references/` 與 `scripts/`，**不要只改一邊**。
 
 ## 功能
 1. **烤箱 ↔ 氣炸鍋**：溫度/時間換算 + 氣炸鍋做麵包的實測限制。
@@ -14,7 +23,8 @@ Renee 的個人烘焙助手（Claude Code / Claude 可用的 skill）。專長�
 
 ## 結構
 ```
-SKILL.md              # 主入口（何時觸發 + 功能導覽 + 連動 Notion 食譜庫）
+SKILL.md              # Claude 入口（何時觸發 + 功能導覽 + 連動 Notion 食譜庫）
+AGENTS.md             # Codex / 其他 agent 入口（硬規則 + 檔案路由）
 references/
   conversions.md      # 溫度/時間 + 計量單位對照表
   doughs.md           # 麵種比例與製程總表
